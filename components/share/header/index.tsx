@@ -18,7 +18,7 @@ function Header() {
         </div>
         {/* buttons and theme changer menu */}
         <div className='space-x-2'>
-            {/* <Theme /> */}
+            <Theme />
             <Button asChild variant="ghost">
                 <Link href="/cart">
                 <ShoppingCart /> Cart
