@@ -7,10 +7,13 @@ import { Product } from '@/lib/types/product'
 
 function ProductCard({product}:{product:Product}) {
   return (
-    <Card>
+    <Card className='group'>
         <CardHeader>
             <Link href={`product/${product.slug}`}>
-            <Image src={`${product.images[0]}`} alt={`${product.name}`} className='h-10/12 w-full' height={700} width={700} priority={true} />
+            <div className='h-11/12 w-full overflow-hidden p-0 transition duration-100'>
+            <Image src={`${product.images[0]}`} alt={`${product.name}`} className='h-full w-full group-hover:hidden block transition-all duration-100' height={700} width={700} priority={true} />
+            <Image src={`${product.images[1]}`} alt={`${product.name}`} className='h-full w-full group-hover:scale-110 group-hover:block hidden transition-all duration-100 group-hover:object-center' height={700} width={700} />
+            </div>
             </Link>
         </CardHeader>
         <CardContent className='grid p-4 gap-4'>

@@ -8,7 +8,7 @@ function Products({data,title,description,limit}:{data:any,title?:string,descrip
     <div>
         {title!=="" && description!==""?(
         <div>
-      <h1 className="text-center font-bold text-3xl py-3">{title} <span className="text-blue-800">Deal</span></h1>
+      <h1 className="text-center font-bold text-3xl py-3">{title} <span className="text-brand">Deal</span></h1>
       <p className="text-base text-center">{description}</p>
       </div>
         ):""}
