@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Quicksand } from "next/font/google";
 import "./globals.css";
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from "@/lib/constants";
 import { ThemeProvider } from "next-themes";
 
 const inter = Inter({subsets : ["latin"]});
+
+const quicksand = Quicksand({subsets:['latin']});
 
 const poppins = Poppins({subsets: ['latin'], weight: ['100' ,'200','300','400','500','600','700','800','900'], display: 'swap', variable: '--font-poppins'});
 
@@ -25,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning >
       <body
-        className={`${inter.className} ${poppins.className} antialiased`}
+        className={`${inter.className} ${quicksand.className} ${poppins.className} antialiased`}
       >
         <ThemeProvider attribute="class"
         enableSystem
