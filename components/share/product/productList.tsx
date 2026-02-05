@@ -1,7 +1,8 @@
 import React from 'react'
 import ProductCard from './ProductCard';
+import { ProductInfo } from '@/types/product';
 
-function Products({data,title,description}:{data:any,title?:string,description?:string}) {
+function Products({data,title,description}:{data:ProductInfo[],title?:string,description?:string}) {
     const limitedProducts = data;
   return (
     <div>
@@ -13,7 +14,7 @@ function Products({data,title,description}:{data:any,title?:string,description?:
         ):""}
             {limitedProducts.length>0?
             <div className=" w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {limitedProducts.map((product:any) =>(
+            {limitedProducts.map((product:ProductInfo) =>(
                 <ProductCard key={product.slug} product={product} />
             ))}
             </div>
