@@ -1,5 +1,5 @@
 import { auth } from '@/auth'
-import SignInWithCredentials from '@/components/credential-sign-in-form'
+import SignUpForm from '@/components/sign-up-form'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { APP_NAME } from '@/lib/constants'
 import { Metadata } from 'next'
@@ -9,10 +9,10 @@ import { redirect } from 'next/navigation'
 import React from 'react'
 
 export const metadata:Metadata = {
-  title:"Sign In"
+  title:"Sign Up"
 }
 
-async function Login() {
+async function SignUp() {
   const session = await auth();
   if(session){
     return redirect('/');
@@ -24,16 +24,16 @@ async function Login() {
           <Link href="/" className='w-full flex justify-center'>
           <Image src="/images/loader.png" alt={APP_NAME} priority={true} height={100} width={100} />
           </Link>
-          <CardTitle className='text-center'>Sign In</CardTitle>
-          <CardDescription className='text-center'>Sign in with email and password</CardDescription>
+          <CardTitle className='text-center'>Sign Up</CardTitle>
+          <CardDescription className='text-center'>Insert the information below to sign up</CardDescription>
         </CardHeader>
         <CardContent>
           {/* input */}
-          <SignInWithCredentials />
+          <SignUpForm />
         </CardContent>
       </Card>
     </div>
   )
 }
 
-export default Login
+export default SignUp
