@@ -6,6 +6,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import { compareSync } from "bcrypt-ts-edge";
 
 export const setting = {
+    secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: '/sign-in',
         error: '/sign-in'

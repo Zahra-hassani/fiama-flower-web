@@ -5,19 +5,19 @@ export const SampleProducts = {
       name: "Ahmad",
       email: "ahmad@gmail.com",
       role: "user",
-      password: hashSync("12345",14)
+      password: hashSync("123457",14)
     },
     {
       name: "Mahsa",
       email: "mahsa@gmail.com",
       role: "user",
-      password: hashSync("12355",14)
+      password: hashSync("123455",14)
     },
     {
       name: "Bahar",
       email: "bahar@gmail.com",
       role: "admin",
-      password: hashSync("12346",14)
+      password: hashSync("123456",14)
     },
   ],
   products: [

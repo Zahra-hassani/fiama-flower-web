@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { EllipsisVertical, ShoppingCart, UserCircle } from 'lucide-react'
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import UserButton from './user-button'
 
 function Menu() {
   return (
@@ -15,11 +16,7 @@ function Menu() {
                 <ShoppingCart /> Cart
                 </Link>
             </Button>
-            <Button asChild className='bg-brand dark:text-white text-black font-bold hover:bg-slate-200/60 hover:text-brand' >
-                <Link href="/login">
-                <UserCircle /> Sign in
-                </Link>
-            </Button>
+            <UserButton />
       </nav>
       <nav className='md:hidden'>
         <Sheet>
@@ -36,11 +33,7 @@ function Menu() {
                 <ShoppingCart /> Cart
                 </Link>
             </Button>
-            <Button asChild className='bg-brand dark:text-white text-black font-bold hover:bg-slate-200/60 hover:text-brand' >
-                <Link href="/login">
-                <UserCircle /> Sign in
-                </Link>
-            </Button>
+            <UserButton />
             <SheetDescription></SheetDescription>
             </SheetContent>
         </Sheet>
