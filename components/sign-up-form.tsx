@@ -35,7 +35,7 @@ function SignUpForm() {
         </div>
         <div className="space-y-2">
             <Label htmlFor="confirmPassword">Confirm Password</Label>
-            <Input type='password' id='confirmPassword' name='confirmPassword' autoComplete='confirmPassword' defaultValue={signUpDefaultValue.confirmPassword} />
+            <Input type='password' id='confirmPassword' name='confirmPassword' autoComplete='password' defaultValue={signUpDefaultValue.confirmPassword} />
         </div>
         {data && data.success && (
             <div className='text-center text-destructive'>{data.message}</div>
