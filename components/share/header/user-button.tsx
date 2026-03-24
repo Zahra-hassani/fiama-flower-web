@@ -15,7 +15,7 @@ import React from "react";
 
 async function UserButton() {
   const session = await auth();
-  const user = await prisma.user.findUnique({
+  const user = await prisma.user.findFirst({
     where: { id: session?.user?.id },
   });
   if (!session) {
