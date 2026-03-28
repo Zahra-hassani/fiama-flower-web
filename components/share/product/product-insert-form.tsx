@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -8,12 +9,21 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import React from "react";
+import { InsertProducts } from "@/lib/actions/product.action";
+import { redirect } from "next/navigation";
+import React, { useActionState } from "react";
 
 function ProductInsertForm() {
+  const [data, action] = useActionState(InsertProducts, {
+    success: false,
+    message: "",
+  });
+  if (data && data.success) {
+    return redirect("/");
+  }
   return (
     <div>
-      <form action="" className="flex flex-col gap-2.5">
+      <form action={action} className="flex flex-col gap-2.5">
         <div className="grid grid-cols-2 gap-1">
           <Input name="name" type="text" placeholder="Product Name" />
           <Input name="slug" type="text" placeholder="Product Slug" />
@@ -63,6 +73,9 @@ function ProductInsertForm() {
             Save
           </Button>
         </div>
+        {data && !data.success && (
+          <div className="text-destructive">{data.message}</div>
+        )}
       </form>
     </div>
   );

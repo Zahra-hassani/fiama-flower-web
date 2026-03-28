@@ -61,9 +61,10 @@ export async function InsertProducts(prevState: unknown, formData: FormData) {
       brand: formData.get("brand"),
       images: productImages,
       stock: formData.get("stock"),
-      isFeatured: formData.get("isFeatured"),
+      isFeatured: formData.get("isFeatured") === "true",
       price: formData.get("price"),
     });
+    console.log("validation successfully completed.");
 
     await prisma.products.create({
       data: {
@@ -84,9 +85,36 @@ export async function InsertProducts(prevState: unknown, formData: FormData) {
       message: "Product added successfully",
     };
   } catch (err) {
+    console.log(err);
     return {
       success: false,
       message: "Could not add the product",
     };
   }
+}
+
+export async function SearchProduct(
+  previousState: unknown,
+  formData: FormData,
+) {
+  const term = formData.get("term") as string;
+  const filteringProducts = await prisma.products.findMany({
+    where: {
+      OR: [
+        { name: { contains: term, mode: "insensitive" } },
+        { brand: { contains: term, mode: "insensitive" } },
+      ],
+    },
+    orderBy: {
+      name: "asc",
+    },
+  });
+  const serializingProducts = filteringProducts.map((product) => ({
+    ...product,
+    price: Number(product.price),
+    rating: Number(product.rating),
+  }));
+  return {
+    products: convertToPlainObject(filteringProducts),
+  };
 }

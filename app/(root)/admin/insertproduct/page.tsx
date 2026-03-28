@@ -16,7 +16,7 @@ async function page() {
       return (
         <div className="grid w-full grid-cols-1 md:grid-cols-3 border p-2 rounded-md shadow-2xl">
           <div className="relative flex col-span-1 flex-col items-center">
-            <h1 className="leading-none text-xl md:text-2xl lg:text-3xl font-bold text-brand">
+            <h1 className="leading-none text-xl md:text-2xl lg:text-3xl font-bold text-purple-700/70">
               Add Product
             </h1>
             <p className="text-sm text-muted-foreground text-center">
