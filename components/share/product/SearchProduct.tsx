@@ -24,13 +24,15 @@ function SearchProduct({
   return (
     <div className="w-full max-w-6xl mx-auto my-4">
       <Table>
-        <TableHeader>
+        <TableHeader className="bg-black">
           <TableRow>
-            <TableHead>Product Name</TableHead>
-            <TableHead>Brand</TableHead>
-            <TableHead>Price</TableHead>
-            <TableHead>Image</TableHead>
-            <TableHead colSpan={2}>Actions</TableHead>
+            <TableHead className=" text-white">Product Name</TableHead>
+            <TableHead className=" text-white">Brand</TableHead>
+            <TableHead className=" text-white">Price</TableHead>
+            <TableHead className=" text-white">Image</TableHead>
+            <TableHead className=" text-white" colSpan={2}>
+              Actions
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

@@ -16,10 +16,10 @@ function Products({
     <div>
       {title !== "" && description !== "" ? (
         <div>
-          <h1 className="font-bold font-poppins text-3xl py-3">
+          <h1 className="font-bold font-quick text-3xl py-3">
             {title} <span className="text-brand">Deal</span>
           </h1>
-          <p className="text-base py-1">{description}</p>
+          <p className="font-poppins py-1">{description}</p>
         </div>
       ) : (
         ""
