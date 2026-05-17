@@ -1,45 +1,49 @@
-import React from 'react'
-import Theme from './toggle'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { EllipsisVertical, ShoppingCart, UserCircle } from 'lucide-react'
-import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-import UserButton from './user-button'
+import React from "react";
+import Theme from "./toggle";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { EllipsisVertical, ShoppingCart, UserCircle } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import UserButton from "./user-button";
 
 function Menu() {
   return (
-    <div className='flex justify-end gap-3'>
-      <nav className='hidden md:flex max-w-xs w-full gap-1'>
+    <div className="flex justify-end gap-3">
+      <nav className="hidden md:flex max-w-xs w-full gap-1">
         <Theme />
-            <Button asChild variant="ghost">
-                <Link href="/cart">
-                <ShoppingCart /> Cart
-                </Link>
-            </Button>
-            <UserButton />
+        <Button asChild variant="ghost">
+          <Link href="/cart">
+            <ShoppingCart /> Cart
+          </Link>
+        </Button>
+        {/* <UserButton /> */}
       </nav>
-      <nav className='md:hidden'>
+      <nav className="md:hidden">
         <Sheet>
-            <SheetTrigger className='align-middle'>
-                <EllipsisVertical />
-            </SheetTrigger>
-            <SheetContent className='flex flex-col items-start gap-1 pl-3'>
-                <SheetTitle>
-                    Menu
-                </SheetTitle>
-                    <Theme />
+          <SheetTrigger className="align-middle">
+            <EllipsisVertical />
+          </SheetTrigger>
+          <SheetContent className="flex flex-col items-start gap-1 pl-3">
+            <SheetTitle>Menu</SheetTitle>
+            <Theme />
             <Button asChild variant="ghost">
-                <Link href="/cart">
+              <Link href="/cart">
                 <ShoppingCart /> Cart
-                </Link>
+              </Link>
             </Button>
-            <UserButton />
+            {/* <UserButton /> */}
             <SheetDescription></SheetDescription>
-            </SheetContent>
+          </SheetContent>
         </Sheet>
       </nav>
     </div>
-  )
+  );
 }
 
-export default Menu
+export default Menu;
